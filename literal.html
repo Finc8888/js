@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	Literal</title>
+</head>
+<body>
+	<script>	
+
+
+obj={
+	coord:[34.3,34.5],
+    name:'Калининский',
+    registration_time :'1.05.2018 00:34',
+    person:'Мухемед Бен Муса Аль Хорезми',
+    tel:'8(918)3496874',
+    type_message:'message',
+    type_event:'incedent',
+    fk_region:'Калининский',
+    sms:'Что-то случилось'
+}
+
+
+
+    function CardMessage(obj) {
+        this.coord = obj['coord'];
+        this.name = obj['name'];
+        this.registration_time = obj['registration_time'];
+        this.person = obj['person'];
+        this.tel = obj['tel'];
+        this.type_message = obj['type_message'];
+        this.type_event = obj['type_event'];
+        this.fk_region = obj['fk_region'];
+        this.sms = obj['sms'];
+
+
+        // Добавление класса Accordion
+        this.addCardMessage = function()
+        {
+		var str =
+        "<p>" +
+        "<b>Дата проишествия: </b>" + this.registration_time +
+        "</p>" +
+        "<p>" +
+        "<b>Заявитель: </b>" + this.person +
+        "</p>" +
+        "<p>" +
+        "<b>Телефон заявителя: </b> " + this.tel +
+        "</p>" +
+
+        "<p class='situation'>" +
+        "<b class='situation'>Проишествие: </b>" + this.type_message +
+        "</p>" +
+        "<p class='situation'>" +
+        "<b class='situation'>Классификатор события: </b>" + this.type_event +
+        "</p>" +
+//            "<p>" +
+//            "<b>Аварийность: </b>" + alarm +
+//            "</p>"+
+        "<p>" +
+        "<b>Район: </b>" + this.fk_region +
+        "</p>" +
+        "<p>" +
+        "<b>Сообщение: </b>" +
+        "<em class='text'> " + this.sms + "</em>" +
+        "</p>";	
+        return str;
+        };
+}
+    var card = new CardMessage(arr);
+    var node=card.addCardMessage();
+    console.log(node);
+	</script>
+</body>
+</html>
