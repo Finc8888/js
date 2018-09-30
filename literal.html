@@ -8,7 +8,7 @@
 	<script>	
 
 
-obj={
+obj1={
 	coord:[34.3,34.5],
     name:'Калининский',
     registration_time :'1.05.2018 00:34',
@@ -19,10 +19,33 @@ obj={
     fk_region:'Калининский',
     sms:'Что-то случилось'
 }
+obj2={
+	coord:[34.3,34.5],
+    name:'Калининский',
+    registration_time :'1.05.2018 00:34',
+    person:'Mark',
+    tel:'8(918)3496874',
+    type_message:'message',
+    type_event:'incedent',
+    fk_region:'Калининский',
+    sms:'Что-то случилось'
+}
+obj3={
+	coord:[34.3,34.5],
+    name:'Калининский',
+    registration_time :'1.05.2018 00:34',
+    person:'David',
+    tel:'8(918)3496874',
+    type_message:'message',
+    type_event:'incedent',
+    fk_region:'Калининский',
+    sms:'Что-то случилось'
+}
 
-
+var list =[obj1,obj2,obj3]
 
     function CardMessage(obj) {
+    	//функция ChoiceCoord
         this.coord = obj['coord'];
         this.name = obj['name'];
         this.registration_time = obj['registration_time'];
@@ -33,8 +56,6 @@ obj={
         this.fk_region = obj['fk_region'];
         this.sms = obj['sms'];
 
-
-        // Добавление класса Accordion
         this.addCardMessage = function()
         {
 		var str =
@@ -67,9 +88,18 @@ obj={
         return str;
         };
 }
-    var card = new CardMessage(arr);
+
+
+
+
+
+var result = list.map(function (object) {
+	alert(object.coord)
+      var card = new CardMessage(object);
     var node=card.addCardMessage();
-    console.log(node);
+    return node;
+})
+console.log(result)
 	</script>
 </body>
 </html>
